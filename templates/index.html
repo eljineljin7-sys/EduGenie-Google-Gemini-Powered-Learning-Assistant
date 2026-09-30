@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduGenie – AI Learning Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Welcome to EduGenie 🧠✨</h1>
+      <p class="tagline">Your personal AI tutor for learning support!</p>
+    </header>
+
+    <section class="tool" data-task="qa" data-limit="{{ limits.qa }}">
+      <h2><label for="qa-input">Ask EduGenie a Question:</label></h2>
+      <form class="tool-form" novalidate>
+        <input id="qa-input" type="text" placeholder="Why is the sky blue?" autocomplete="off">
+        <button type="submit">Get Answer</button>
+      </form>
+      <div class="result-box" aria-live="polite"></div>
+    </section>
+
+    <section class="tool" data-task="explain" data-limit="{{ limits.explain }}">
+      <h2><label for="explain-input">Need an Explanation?</label></h2>
+      <form class="tool-form" novalidate>
+        <input id="explain-input" type="text" placeholder="Photosynthesis" autocomplete="off">
+        <button type="submit">Explain</button>
+      </form>
+      <div class="result-box" aria-live="polite"></div>
+    </section>
+
+    <section class="tool" data-task="summarize" data-limit="{{ limits.summarize }}">
+      <h2><label for="summarize-input">Summarize a Paragraph:</label></h2>
+      <form class="tool-form" novalidate>
+        <textarea id="summarize-input" rows="1" placeholder="Paste long content to summarize"></textarea>
+        <button type="submit">Summarize</button>
+      </form>
+      <div class="result-box" aria-live="polite"></div>
+    </section>
+
+    <section class="tool" data-task="quiz" data-limit="{{ limits.quiz }}">
+      <h2><label for="quiz-input">Generate a Quiz:</label></h2>
+      <form class="tool-form" novalidate>
+        <textarea id="quiz-input" rows="1" placeholder="Solar System"></textarea>
+        <button type="submit">Generate Quiz</button>
+      </form>
+      <div class="result-box" aria-live="polite"></div>
+    </section>
+
+    <section class="tool" data-task="recommend" data-limit="{{ limits.recommend }}">
+      <h2><label for="recommend-input">Get Learning Recommendations:</label></h2>
+      <form class="tool-form stacked" novalidate>
+        <input id="recommend-input" type="text" placeholder="e.g. Linear Regression" autocomplete="off">
+        <button type="submit">Get Recommendations</button>
+      </form>
+      <div class="result-box" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
